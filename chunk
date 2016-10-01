@@ -1,0 +1,17 @@
+template<typename dataType>
+class chunk
+{
+private:
+  int m_nbOfDim;
+  int * m_dimLength;
+  dataType * m_data;
+public:
+  chunk(int * a_dimLength, int a_nbOfDim);
+  chunk(chunk a_chunk);
+  ~chunk();
+  
+  void clear();
+  dataType getValue(int * a_position, int a_nbOfDim);
+  void setValue(int * a_position, int a_nbOfDim, dataType * value);
+  void setAll(dataType value);
+}
